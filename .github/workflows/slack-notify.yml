@@ -1,0 +1,18 @@
+on: push
+name: Slack Notification
+jobs:
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@master
+      env:
+        SLACK_CHANNEL: github-action-test
+        SLACK_COLOR: '#1A6B11'
+        SLACK_ICON: https://github.com/code-villain.png?size=48
+        SLACK_MESSAGE: 'Someone pushed me:rocket: $GITHUB_SHA'
+        SLACK_TITLE: Message
+        SLACK_USERNAME: CodeVillainBot
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
