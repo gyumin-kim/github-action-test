@@ -16,3 +16,4 @@ jobs:
         SLACK_TITLE: Message
         SLACK_USERNAME: CodeVillainBot
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        GITHUB_SHA: $GITHUB_SHA
